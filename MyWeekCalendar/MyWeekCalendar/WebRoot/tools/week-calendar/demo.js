@@ -3,6 +3,7 @@ $(document).ready(function() {
 
    var $calendar = $('#calendar');
    var id = 10;
+   var my_date = new Date();
 
    $calendar.weekCalendar({
       timeslotsPerHour : 4,
@@ -12,7 +13,7 @@ $(document).ready(function() {
       timeSeparator: " 到 ",
       shortMonths: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
       longDays: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
-      firstDayOfWeek: 5,
+      firstDayOfWeek: my_date.getDay(),
       dateFormat: "Y年M月d日",
       timeFormat: "H:i",
       use24Hour: true,
