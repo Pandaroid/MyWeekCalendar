@@ -269,20 +269,20 @@
        */
       _renderCalendar : function() {
 
-         var $calendarContainer, calendarNavHtml, calendarHeaderHtml, calendarBodyHtml, $weekDayColumns;
+         var $calendarContainer, /*calendarNavHtml,*/ calendarHeaderHtml, calendarBodyHtml, $weekDayColumns;
          var self = this;
          var options = this.options;
 
          $calendarContainer = $("<div class=\"wc-container\">").appendTo(self.element);
 
          if (options.buttons) {
-            calendarNavHtml = "<div class=\"wc-nav\">\
+            /*calendarNavHtml = "<div class=\"wc-nav\">\
                     <button class=\"wc-today\">" + options.buttonText.today + "</button>\
                     <button class=\"wc-prev\">" + options.buttonText.lastWeek + "</button>\
                     <button class=\"wc-next\">" + options.buttonText.nextWeek + "</button>\
                     </div>";
 
-            $(calendarNavHtml).appendTo($calendarContainer);
+            $(calendarNavHtml).appendTo($calendarContainer);*/
 
             $calendarContainer.find(".wc-nav .wc-today").click(function() {
                self.element.weekCalendar("today");

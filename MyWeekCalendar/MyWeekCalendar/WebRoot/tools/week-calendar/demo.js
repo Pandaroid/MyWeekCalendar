@@ -8,8 +8,15 @@ $(document).ready(function() {
       timeslotsPerHour : 4,
       allowCalEventOverlap : true,
       overlapEventsSeparate: true,
-      firstDayOfWeek : 1,
-      businessHours :{start: 8, end: 18, limitDisplay: true },
+      newEventText: "创建新事件",
+      timeSeparator: " 到 ",
+      shortMonths: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+      longDays: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'],
+      firstDayOfWeek: 5,
+      dateFormat: "Y年M月d日",
+      timeFormat: "H:i",
+      use24Hour: true,
+      businessHours :{start: 0, end: 24, limitDisplay: false },
       daysToShow : 7,
       height : function($calendar) {
          return $(window).height() - $("h1").outerHeight() - 1;
@@ -40,14 +47,14 @@ $(document).ready(function() {
 
          $dialogContent.dialog({
             modal: true,
-            title: "New Calendar Event",
+            title: "新建日历事件",
             close: function() {
                $dialogContent.dialog("destroy");
                $dialogContent.hide();
                $('#calendar').weekCalendar("removeUnsavedEvents");
             },
             buttons: {
-               save : function() {
+               "保存" : function() {
                   calEvent.id = id;
                   id++;
                   calEvent.start = new Date(startField.val());
@@ -59,7 +66,7 @@ $(document).ready(function() {
                   $calendar.weekCalendar("updateEvent", calEvent);
                   $dialogContent.dialog("close");
                },
-               cancel : function() {
+               "取消" : function() {
                   $dialogContent.dialog("close");
                }
             }
@@ -151,37 +158,37 @@ $(document).ready(function() {
                "id":1,
                "start": new Date(year, month, day, 12),
                "end": new Date(year, month, day, 13, 30),
-               "title":"Lunch with Mike"
+               "title":"跟李彦宏吃午饭"
             },
             {
                "id":2,
                "start": new Date(year, month, day, 14),
                "end": new Date(year, month, day, 14, 45),
-               "title":"Dev Meeting"
+               "title":"百度WDM研发会议"
             },
             {
                "id":3,
                "start": new Date(year, month, day + 1, 17),
                "end": new Date(year, month, day + 1, 17, 45),
-               "title":"Hair cut"
+               "title":"去南门威申国际剪头发"
             },
             {
                "id":4,
-               "start": new Date(year, month, day - 1, 8),
-               "end": new Date(year, month, day - 1, 9, 30),
-               "title":"Team breakfast"
+               "start": new Date(year, month, day + 1, 8),
+               "end": new Date(year, month, day + 1, 9, 30),
+               "title":"page、mark和plat组团队建设活动"
             },
             {
                "id":5,
                "start": new Date(year, month, day + 1, 14),
                "end": new Date(year, month, day + 1, 15),
-               "title":"Product showcase"
+               "title":"WD产品展示会"
             },
             {
                "id":6,
                "start": new Date(year, month, day, 10),
                "end": new Date(year, month, day, 11),
-               "title":"I'm read-only",
+               "title":"如果我是只读的，说明朱建兵很帅",
                readOnly : true
             }
 
@@ -242,25 +249,6 @@ $(document).ready(function() {
          $endTimeField.find("option:eq(1)").attr("selected", "selected");
       }
 
-   });
-
-
-   var $about = $("#about");
-
-   $("#about_button").click(function() {
-      $about.dialog({
-         title: "About this calendar demo",
-         width: 600,
-         close: function() {
-            $about.dialog("destroy");
-            $about.hide();
-         },
-         buttons: {
-            close : function() {
-               $about.dialog("close");
-            }
-         }
-      }).show();
    });
 
 
