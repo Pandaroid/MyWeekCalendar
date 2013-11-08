@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 <head>
@@ -27,7 +27,7 @@
 					<label for="end">结束时间：</label><select name="end"><option value="">Select End Time</option></select>
 				</li>
 				<li>
-					<label for="title">标题：</label><input type="text" name="title" />
+					<label for="title">主题：</label><input type="text" name="title" />
 				</li>
 				<li>
 					<label for="body">内容：</label><textarea name="body"></textarea>

@@ -8,12 +8,12 @@ $(document).ready(function() {
       timeslotsPerHour : 4,
       allowCalEventOverlap : true,
       overlapEventsSeparate: true,
-      newEventText: "´´½¨ĞÂÊÂ¼ş",
-      timeSeparator: " µ½ ",
+      newEventText: "åˆ›å»ºæ–°äº‹ä»¶",
+      timeSeparator: " åˆ° ",
       shortMonths: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
-      longDays: ['ĞÇÆÚÈÕ', 'ĞÇÆÚÒ»', 'ĞÇÆÚ¶ş', 'ĞÇÆÚÈı', 'ĞÇÆÚËÄ', 'ĞÇÆÚÎå', 'ĞÇÆÚÁù'],
+      longDays: ['æ˜ŸæœŸæ—¥', 'æ˜ŸæœŸä¸€', 'æ˜ŸæœŸäºŒ', 'æ˜ŸæœŸä¸‰', 'æ˜ŸæœŸå››', 'æ˜ŸæœŸäº”', 'æ˜ŸæœŸå…­'],
       firstDayOfWeek: 5,
-      dateFormat: "YÄêMÔÂdÈÕ",
+      dateFormat: "Yå¹´Mæœˆdæ—¥",
       timeFormat: "H:i",
       use24Hour: true,
       businessHours :{start: 0, end: 24, limitDisplay: false },
@@ -47,14 +47,14 @@ $(document).ready(function() {
 
          $dialogContent.dialog({
             modal: true,
-            title: "ĞÂ½¨ÈÕÀúÊÂ¼ş",
+            title: "æ–°å»ºæ—¥å†äº‹ä»¶",
             close: function() {
                $dialogContent.dialog("destroy");
                $dialogContent.hide();
                $('#calendar').weekCalendar("removeUnsavedEvents");
             },
             buttons: {
-               "±£´æ" : function() {
+               "ä¿å­˜" : function() {
                   calEvent.id = id;
                   id++;
                   calEvent.start = new Date(startField.val());
@@ -66,7 +66,7 @@ $(document).ready(function() {
                   $calendar.weekCalendar("updateEvent", calEvent);
                   $dialogContent.dialog("close");
                },
-               "È¡Ïû" : function() {
+               "å–æ¶ˆ" : function() {
                   $dialogContent.dialog("close");
                }
             }
@@ -158,37 +158,37 @@ $(document).ready(function() {
                "id":1,
                "start": new Date(year, month, day, 12),
                "end": new Date(year, month, day, 13, 30),
-               "title":"¸úÀîÑåºê³ÔÎç·¹"
+               "title":"è·Ÿæå½¦å®åƒåˆé¥­"
             },
             {
                "id":2,
                "start": new Date(year, month, day, 14),
                "end": new Date(year, month, day, 14, 45),
-               "title":"°Ù¶ÈWDMÑĞ·¢»áÒé"
+               "title":"ç™¾åº¦WDMç ”å‘ä¼šè®®"
             },
             {
                "id":3,
                "start": new Date(year, month, day + 1, 17),
                "end": new Date(year, month, day + 1, 17, 45),
-               "title":"È¥ÄÏÃÅÍşÉê¹ú¼Ê¼ôÍ··¢"
+               "title":"å»å—é—¨å¨ç”³å›½é™…å‰ªå¤´å‘"
             },
             {
                "id":4,
                "start": new Date(year, month, day + 1, 8),
                "end": new Date(year, month, day + 1, 9, 30),
-               "title":"page¡¢markºÍplat×éÍÅ¶Ó½¨Éè»î¶¯"
+               "title":"pageã€markå’Œplatç»„å›¢é˜Ÿå»ºè®¾æ´»åŠ¨"
             },
             {
                "id":5,
                "start": new Date(year, month, day + 1, 14),
                "end": new Date(year, month, day + 1, 15),
-               "title":"WD²úÆ·Õ¹Ê¾»á"
+               "title":"WDäº§å“å±•ç¤ºä¼š"
             },
             {
                "id":6,
                "start": new Date(year, month, day, 10),
                "end": new Date(year, month, day, 11),
-               "title":"Èç¹ûÎÒÊÇÖ»¶ÁµÄ£¬ËµÃ÷Öì½¨±øºÜË§",
+               "title":"å¦‚æœæˆ‘æ˜¯åªè¯»çš„ï¼Œè¯´æ˜æœ±å»ºå…µå¾ˆå¸…",
                readOnly : true
             }
 
@@ -250,6 +250,5 @@ $(document).ready(function() {
       }
 
    });
-
 
 });
